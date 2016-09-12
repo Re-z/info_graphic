@@ -1,0 +1,1460 @@
+// done by riverco.de team
+$headerBg: #224056
+$lightOrange: #F09A35
+$lightBlue: #6CC2DD
+$darkBlue: #4a6c82
+$darkDarkBlue: #224056
+$veryDarkBlue: #095584
+$darkGreenBlue: #688A94
+$white: white
+$sky: #C1E5F8
+$darkSky: #6BC4DF
+
+.clearfix
+	clear: both
+
+body
+	overflow-x: hidden
+
++font(AmericanCaptain, AmericanCaptain)
+=captain
+	font-family: 'AmericanCaptain', serif
+
+
+=flex($horizontal:center, $vertical: stretch)
+	display: flex
+	justify-content: $horizontal
+	align-items: $vertical
+=roboto
+	font-family: 'Roboto', sans-serif
+=robotoCond
+	font-family: 'Roboto Condensed', sans-serif
+=ptCapt
+	font-family: 'PT Sans Caption', sans-serif
+
+
+.header
+	height: 98px
+	background: $headerBg
+	position: fixed
+	width: 100%
+	z-index: 100
+	+r(767)
+		height: 57px
+	&__inner
+		width: 1000px
+		margin: 0 auto
+		height: inherit
+		padding: 0 37px 0 27px
+		+flex(space-between, center)
+		position: relative
+		+r(1000)
+			width: 100%
+			padding-right: 20px
+			padding-left: 10px
+		+r(767)
+			padding: 0
+	&__title-wrap
+		width: 670px
+		+r(767)
+			width: 310px
+			margin: 0 auto
+		+clr
+	&__logo
+		background: url("../img/logo-tab.svg") center center no-repeat
+		height: 98px
+		width: 58px
+		float: left
+		margin-right: 17px
+		+flex(center, center)
+		+r(1000)
+			width: 49px
+			height: 79px
+		+r(767)
+			width: 34px
+			height: 34px
+			padding: 40px 0 10px 0
+			margin-right: 10px
+
+.feedback
+	background: $darkDarkBlue
+	position: absolute
+	right: 0
+	//bottom: -227px
+	width: 250px
+	top: 110px
+	padding: 30px 20px 0 20px
+	z-index: 10
+	display: none
+	&:before
+		display: block
+		content: ''
+		+arr(15, 15, $darkDarkBlue, t)
+		position: absolute
+		top: -13px
+		left: 50%
+		+r(767)
+			top: auto
+			bottom: -13px
+			border: none
+			+arr(15, 15, $darkDarkBlue, b)
+	&__input-text
+		display: block
+		background: inherit
+		color: $white
+		+roboto
+		outline: 1px solid white
+		width: 100%
+		margin-bottom: 20px
+		padding: 5px
+		font-size: 14px
+		border: none
+		&::-webkit-input-placeholder
+			color: $white
+		&:-moz-placeholder
+			color: $white
+		&:-ms-input-placeholder
+			color: $white
+	&__textarea
+		@extend .feedback__input-text
+		resize: none
+	&__close
+		+roboto
+		font-size: 20px
+		color: $lightOrange
+		position: absolute
+		right: 1%
+		top: 0
+		cursor: pointer
+		font-weight: bold
+
+	&__submit
+		font-weight: bold
+		color: $white
+		background: $lightOrange
+		width: 80px
+		margin: 0 auto 15px auto
+		height: 25px
+		display: block
+		text-transform: uppercase
+		+ptCapt
+	//styling for mobile
+	&_mob
+		@extend .feedback
+		top: -230px
+		left: -12px
+
+.title
+	color: $white
+	font-size: 48px
+	text-transform: uppercase
+	font-weight: 900
+	+roboto
+	text-shadow: 3px 3px 5px black
+	+r(1000)
+		font-size: 40px
+	+r(767)
+		font-size: 27px
+	& span
+		font-weight: 100
+.subtitle
+	color: $white
+	font-size: 18px
+	text-transform: uppercase
+	font-weight: 100
+	line-height: 13px
+	+robotoCond
+	+r(1000)
+		font-size: 15px
+	+r(767)
+		font-size: 10px
+		line-height: 5px
+	& span
+		color: $lightOrange
+		font-weight: bold
+
+.write-us
+	width: 135px
+	height: 42px
+	background: $lightOrange
+	outline: 1px dashed $white
+	outline-offset: 10px
+	text-decoration: none
+	color: $white
+	text-align: center
+	font-weight: bold
+	font-size: 15px
+	text-transform: uppercase
+	padding: 0 40px 0 40px
+	line-height: 15px
+	+ptCapt
+	cursor: pointer
+	margin-left: auto
+	+r(1000)
+		width: 200px
+		padding: 0 10px 0 10px
+	+r(767)
+		display: none
+
+.what
+	padding-top: 98px
+	height: 762px
+	background: url("../img/bg1.png") no-repeat 50% 100%
+	background-size: cover
+	overflow: hidden
+	+r(1000)
+		padding-top: 170px
+		height: 667px
+	+r(767)
+		display: none
+
+	&__inner
+		width: 1000px
+		margin: 0 auto
+		padding-top: 130px
+		position: relative
+		+r(1000)
+			width: 100%
+			padding-top: 0
+			height: 597px
+.section-title
+	text-align: center
+	margin: 0 auto
+	font-size: 20px
+	font-weight: bold
+	+robotoCond
+	text-transform: uppercase
+	padding: 3px 0
+	position: relative
+	z-index: 9
+	&_light
+		@extend .section-title
+		color: $darkBlue
+		background: $white
+	&_dark
+		@extend .section-title
+		color: $white
+		background: $darkDarkBlue
+	&_what
+		@extend .section-title_light
+		width: 280px
+	&_why
+		@extend .section-title_dark
+		width: 460px
+		position: relative
+		+r(1000)
+			left: 35px
+		+r(767)
+			display: none
+	&_where
+		text-align: center
+		+r(767)
+			border: 2px solid $white
+			background: transparent
+			width: 245px
+			margin: 0 auto
+			padding: 5px 0
+		& span
+			@extend .section-title_light
+			padding: 5px 10px
+			+r(767)
+				background: transparent
+				color: $darkDarkBlue
+				line-height: 21px
+	&_portfolio
+		@extend .section-title_dark
+		width: 190px
+		position: relative
+		top: -100px
+		+r(1000)
+			top: -90px
+		+r(767)
+			top: 27px
+			border: 2px solid $lightOrange
+	&_testimonals
+		@extend .section-title_light
+		width: 190px
+		z-index: 2
+		+r(767)
+			border: 2px solid $lightOrange
+			background: transparent
+			color: white
+	&_pricing
+		@extend .section-title_dark
+		width: 270px
+		position: relative
+		top: - 63px
+		+r(767)
+			border: 2px solid $white
+			background: transparent
+			color: $darkDarkBlue
+			width: 270px
+			top: 15px
+	&_team
+		@extend .section-title_light
+		width: 160px
+		margin-bottom: 35px
+
+.number
+	position: absolute
+	font-family: Arial, serif
+	font-weight: bold
+	font-size: 142px
+	color: rgba(121, 146, 153, .2)
+	+r(767)
+		display: none
+	&_1
+		@extend .number
+		top: 1%
+		left: 36%
+		font-size: 162px
+		+r(1000)
+			top: -19%
+			left: 33%
+	&_2
+		@extend .number
+		top: -18%
+		right: 28%
+		+r(1000)
+			right: 17%
+			top: -17%
+	&_3
+		@extend .number
+		top: 8%
+		right: 46%
+		+r(1000)
+			top: 3%
+	&_4
+		@extend .number
+		top: -32%
+		left: 21%
+		+r(1000)
+			left: 5%
+.infographic
+	width: 630px
+	margin: 0 auto
+	height: 235px
+	margin-top: 63px
+	+flex(space-between)
+	&__block
+		height: inherit
+		width: 190px
+		&:first-of-type
+			border-left: 2px dashed $darkBlue
+		&.second
+			border-right: 2px dashed $darkBlue
+	&__pic
+		width: 175px
+		height: inherit
+		background: url("../img/infographic.svg") no-repeat center center
+	&__item
+		height: 50%
+		position: relative
+		padding-left: 65px
+		&:first-of-type
+			border-bottom: 2px dashed $darkBlue
+		&:nth-of-type(2)
+			padding-left: 50px
+			padding-top: 35px
+		&_reverse
+			@extend .infographic__item
+			padding-left: 0
+			padding-right: 65px
+			&:nth-of-type(2)
+				padding-left: 0
+				padding-top: 35px
+				padding-right: 35px
+
+		&-text
+			text-align: right
+			+roboto
+			font-size: 14px
+			line-height: 17px
+			& span
+				font-weight: bold
+			&_reverse
+				@extend .infographic__item-text
+				text-align: left
+.what-ico
+	width: 43px
+	height: 43px
+	+flex(center, center)
+	position: absolute
+.cross
+	@extend .what-ico
+	background: $lightOrange
+	top: 0
+	left: -1%
+	&__svg
+		width: 20px
+		height: 20px
+	& .cls-1
+		fill: #fdf6e2
+.eye
+	@extend .what-ico
+	background: $lightBlue
+	bottom: 0
+	left: -1%
+	&__svg
+		@extend .cross__svg
+	& .cls-1
+		fill: #fdf6e2
+.clock
+	@extend .what-ico
+	background: $lightOrange
+	top: 0
+	right: -2%
+	&__svg
+		width: 20px
+		height: 20px
+	& .cls-1
+		fill: #fdf6e2
+.aim
+	@extend .what-ico
+	background: $lightBlue
+	bottom: 0
+	right: -2%
+	&__svg
+		@extend .cross__svg
+	& .cls-1
+		fill: #fdf6e2
+
+//start why section
+.why
+	.why__inner
+		margin: 0 auto
+		width: 1000px
+		position: relative
+		padding-top: 12px
+		+clr
+		+r(1000)
+			width: 750px
+		+r(767)
+			width: 100%
+			padding-top: 68px
+			display: flex
+			background: linear-gradient(to bottom, #A1C0D2 0%, #D9E4EA 10%, #EEEEE7 30%, #E2DED7 40%, #DAE5EA 50%, $white 80%, $white 100%)
+
+.graphic-line
+	display: block
+	position: absolute
+	height: 3px
+	background: $darkGreenBlue
+	width: 690px
+	top: 24px
+	left: 80px
+	+r(1000)
+		width: 637px
+		left: 64px
+	+r(767)
+		display: none
+.benefits
+	width: 375px
+	margin-top: 58px
+	margin-left: 120px
+	float: left
+	position: relative
+	&:before
+		display: block
+		content: ''
+		width: 3px
+		background: $darkGreenBlue
+		position: absolute
+		height: 651px
+		left: -40px
+		top: -77px
+		+r(1000)
+			height: 723px
+	+r(1000)
+		margin-left: 104px
+		width: 300px
+	+r(767)
+		display: none
+	&__item
+		margin-bottom: 40px
+		&:last-of-type
+			margin-bottom: 10px
+		&-title
+			font-size: 17px
+			line-height: 20px
+			+roboto
+			color: $darkBlue
+			font-weight: 400
+			padding-right: 70px
+			position: relative
+			&:before
+				display: block
+				content: ''
+				position: absolute
+				background: url("../img/checked.svg") no-repeat
+				width: 28px
+				height: 30px
+				left: -52px
+			+r(1000)
+				padding-right: 0
+			& span
+				color: $lightBlue
+				font-weight: bold
+		&-text
+			color: $darkGreenBlue
+			+roboto
+			font-weight: 400
+			margin-top: 6px
+			border: 1px dashed $darkGreenBlue
+			padding: 10px 3px 12px 14px
+			font-size: 13px
+			+r(1000)
+				padding-right: 50px
+			& span
+				font-weight: bold
+.compare
+	margin-top: 58px
+	float: left
+	width: 415px
+	margin-left: 64px
+	padding-top: 30px
+	font-size: 0
+	position: relative
+	+clr
+	&:before
+		display: block
+		content: ''
+		height: 330px
+		position: absolute
+		width: 3px
+		background: $darkGreenBlue
+		top: -80px
+		left: 210px
+		+r(767)
+			height: 190px
+			top: -12px
+			left: 160px
+	&:after
+		display: block
+		content: ''
+		width: 35px
+		height: 40px
+		background: url("../img/rombe.svg") no-repeat
+		position: absolute
+		top: 234px
+		left: 195px
+		+r(767)
+			top: 160px
+			left: 145px
+	+r(1000)
+		width: 235px
+		margin-left: 85px
+	+r(767)
+		margin: 0 auto 0 auto
+		padding: 0
+		width: 320px
+
+	&__infographic
+		width: 50%
+		display: inline-block
+		+r(1000)
+			width: auto
+		+r(767)
+			width: 50%
+			float: left
+		&-man
+			width: 73px
+			height: 207px
+			display: block
+			margin: 0 auto
+			+r(767)
+				height: 167px
+	&__ordinary
+		@extend .compare__infographic
+		padding-left: 23px
+		+r(1000)
+			display: none
+		+r(767)
+			display: block
+			padding-left: 0
+		&-man
+			@extend .compare__infographic-man
+	&__title
+		text-transform: uppercase
+		color: $white
+		background: $darkBlue
+		font-weight: bold
+		text-align: center
+		font-family: Arial, serif
+		font-size: 14px
+		line-height: 25px
+		position: relative
+		margin-top: 5px
+		+r(767)
+			font-weight: 900
+			background: $white
+			font-size: 12px
+		& span
+			+r(767)
+				display: none
+		&_infographic
+			@extend .compare__title
+			width: 163px
+			margin-left: 27px
+			+r(767)
+				color: $darkSky
+				margin: 3px auto 0 auto
+				width: auto
+				padding-right: 10px
+				line-height: 19px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				border: 12px solid transparent
+				border-right-color: $darkBlue
+				left: -24px
+				+r(767)
+					display: none
+
+		&_ordinary
+			@extend .compare__title
+			width: 168px
+			margin-left: 4px
+			+r(767)
+				padding-left: 16px
+				width: auto
+				color: $lightOrange
+				margin: 3px auto 0 auto
+				line-height: 19px
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				border: 12px solid transparent
+				border-left-color: $darkBlue
+				right: -24px
+				top: 0
+				+r(767)
+					display: none
+.arrow-down
+	margin: 25px auto 25px auto
+	width: 31px
+	height: 38px
+	display: block
+	background: url("../img/arrow-down.svg") no-repeat
+	+r(767)
+		width: 25px
+		height: 31px
+	&_ordinary
+		@extend .arrow-down
+		margin-bottom: 45px
+.socials-globe
+	display: block
+	width: 122px
+	height: 122px
+	margin: 0 auto
+	+r(767)
+		width: 101px
+		height: 101px
+.trash
+	width: 42px
+	height: 71px
+	display: block
+	margin: 0 auto
+	+r(767)
+		width: 34px
+		height: 58px
+.line-down
+	display: block
+	width: 385px
+	height: 11px
+	background: url("../img/line-down.svg") repeat-x center center
+	margin: 32px auto 0 auto
+	+r(1000)
+		width: 235px
+	+r(767)
+		width: 320px
+		margin-top: 4px
+		position: relative
+		top: 10px
+		z-index: 3
+
+.argument
+	position: relative
+	padding-left: 10px
+	+r(1000)
+		display: block
+	+r(767)
+		background: $white
+		height: 111px
+		padding-left: 5px
+		&:before
+			display: block
+			content: ''
+			width: 8px
+			height: 50px
+			background: $darkSky
+			position: absolute
+			left: 0
+			top: 50%
+			margin-top: -25px
+		&:after
+			@extend .argument:before
+			left: auto
+			right: 0
+
+	&__number
+		+robotoCond
+		font-size: 82px
+		font-weight: bold
+		color: $darkBlue
+		display: inline-block
+		margin-right: 10px
+		letter-spacing: -1.5px
+		+r(1000)
+			font-size: 124px
+			line-height: 140px
+			padding-left: 10px
+		+r(767)
+			font-size: 61px
+			color: $darkSky
+			line-height: 110px
+			margin-right: 10px
+	&__text
+		+roboto
+		font-size: 16px
+		color: $darkBlue
+		text-transform: uppercase
+		font-weight: 400
+		width: 255px
+		display: inline-block
+		line-height: 21px
+		text-align: center
+		letter-spacing: .3px
+		position: absolute
+		top: 24px
+
+		+r(1000)
+			font-size: 17px
+			padding-left: 0
+			width: auto
+			padding-top: 5px
+			position: static
+		+r(767)
+			font-size: 12px
+			width: 180px
+			vertical-align: sub
+			letter-spacing: 0
+		& span
+			font-weight: bold
+			font-size: 20px
+			+r(1000)
+				font-size: 19px
+			+r(767)
+				font-size: 12px
+				font-weight: normal
+
+//start where section
+.where
+	background: url("../img/bg2.png") no-repeat center -100px, linear-gradient(to bottom, white 0%, #EFE8E1 40%, #DBEAF3 60%, #CCE8F9 100%)
+	background-size: cover
+	+r(767)
+		display: none
+	&__inner
+		width: 1000px
+		margin: 0 auto
+		height: 960px
+		position: relative
+		padding: 230px 105px 182px 105px
+		+r(1000)
+			width: 100%
+			padding-top: 185px
+			height: 1042px
+
+	//styles for  clonned block for mobile devices 320px
+	&.is-cloned
+		background: #C1E6F9
+		& .where__inner
+			width: 320px
+			padding: 40px 0 0 0
+			height: 816px
+		& .scope
+			width: 320px
+			margin: 30px auto 0 auto
+			padding-left: 40px
+			&__item
+				width: 143px
+				height: 165px
+				&_website
+					left: 110px
+					top: -47px
+					position: relative
+				&_socials
+					margin-left: 0
+					position: relative
+					top: -80px
+				&_report
+					margin-top: 0
+					position: relative
+					top: -290px
+					left: 110px
+				&_poster
+					top: 5px
+					left: 10px
+					margin: 0
+			&__text
+				font-size: 11px
+				&-box
+					width: 120px
+					height: 36px
+					top: 46px
+					&:after
+						display: none
+
+.scope
+	height: 465px
+	margin-top: 47px
+	+r(1000)
+		margin: 40px auto 0 auto
+		height: auto
+		width: 500px
+	&__item
+		width:  206px
+		height: 237px
+		display: inline-block
+		margin-right: 82px
+		+r(1000)
+			margin-right: 0
+		&_email
+			@extend .scope__item
+			background: url("../img/scope-email.svg") center center no-repeat
+			+r(1000)
+				margin-right: 80px
+		&_website
+			@extend .scope__item
+			background: url("../img/scope-website.svg") center center no-repeat
+		&_socials
+			@extend .scope__item
+			background: url("../img/scope-socials.svg") center center no-repeat
+			margin-right: 0
+			+r(1000)
+				margin-left: 147px
+				position: relative
+				top: -40px
+		&_poster
+			@extend .scope__item
+			background: url("../img/scope-poster.svg") center center no-repeat
+			margin-left: 145px
+			margin-top: -10px
+			+r(1000)
+				margin-left: 0
+				position: relative
+				top: -70px
+				margin-right: 80px
+
+		&_report
+			@extend .scope__item
+			background: url("../img/scope-report.svg") center center no-repeat
+			margin-top: -10px
+			+r(1000)
+				position: relative
+				top: -70px
+	&__text
+		color: $white
+		+roboto
+		font-size: 17px
+		font-weight: 400
+		&:before
+			content: ''
+			display: block
+			background: url("../img/box-arrow.svg") no-repeat
+			width: 15px
+			height: 10px
+			position: absolute
+			left: 0
+			bottom: -10px
+		&-box
+			height: 53px
+			background: $darkGreenBlue
+			position: relative
+			top: 72px
+			left: -12px
+			padding-left: 12px
+			width: 170px
+			+flex(stretch, center)
+			line-height: 17px
+			&:after
+				display: block
+				content: ''
+				position: absolute
+				right: -15px
+				top: 17px
+				background: url("../img/box-arrow-r.svg") no-repeat
+				height: 21px
+				width: 10px
+		& span
+			font-weight: bold
+
+//start portfolio section
+.portfolio
+	background: $darkDarkBlue
+	&__inner
+		width: 1000px
+		height: 470px
+		margin: 0 auto
+		position: relative
+		text-align: center
+		padding-bottom: 18px
+		+r(1000)
+			width: 100%
+			padding-bottom: 60px
+			height: auto
+		+r(767)
+			padding-top: 20px
+			padding-bottom: 20px
+			height: auto
+	&__behance
+		+roboto
+		text-decoration: none
+		font-size: 15px
+		color: $lightOrange
+		border-bottom: 1px dashed $lightOrange
+		display: inline-block
+		text-align: center
+		padding-bottom: 1px
+		margin-top: 40px
+		+r(1000)
+			display: none
+	&__argument
+		display: none
+		width: 320px
+		font-size: 13px
+		color: $white
+		text-transform: uppercase
+		margin: 0 auto
+		font-weight: bold
+		padding: 0 20px
+		+r(767)
+			display: block
+		& span
+			color: $darkSky
+.slider
+	+r(767)
+		+flex(space-between, center)
+		flex-wrap: wrap
+	&__wrap
+		margin: 50px auto 0 auto
+		width: 790px
+		+r(1000)
+			width: 590px
+		+r(767)
+			width: 285px
+	&__item
+		max-width: 172px
+		margin-right: 34px
+		position: relative
+		padding-bottom: 30px
+		&.two, &.three, &.four
+			+r(767)
+				display: none
+		+r(767)
+			max-width: 130px
+			height: 177px
+			margin-right: 17px
+			margin-bottom: 18px
+			&:nth-of-type(even)
+				margin-right: 0
+		&-title
+			margin-bottom: 15px
+			+roboto
+			text-align: center
+			font-size: 18px
+			font-weight: 500
+			color: $white
+			+r(767)
+				display: none
+	&__img
+		margin: 0 auto
+		width: 172px
+		height: 235px
+		cursor: pointer
+		+r(767)
+			max-width: 130px
+			height: 177px
+		&.zoomed
+			width: 100%
+			height: 100%
+			position: relative
+			z-index: 9
+
+.zoomed-wrap
+	width: 516px
+	height: 705px
+	position: absolute
+	z-index: 9
+	left: 50%
+	top: 50%
+	margin-top: -352px
+	margin-left: -258px
+	z-index: 9
+
+.more-works
+	display: none
+	background: $darkSky
+	color: white
+	text-transform: uppercase
+	text-align: center
+	font-size: 18px
+	+robotoCond
+	width: 285px
+	font-weight: bold
+	margin: 0 auto 0 auto
+	+r(767)
+		display: block
+
+//start responds section
+.testimonals
+	background: $sky
+	overflow: hidden
+
+	+r(767)
+		background: $darkDarkBlue
+	&__inner
+		padding: 34px 66px 0 66px
+		width: 1000px
+		margin: 0 auto
+		position: relative
+		height: 475px
+		+r(1000)
+			width: 100%
+			height: 465px
+			padding-left: 50px
+		+r(767)
+			width: 320px
+			margin: 0 auto
+			padding: 30px 0 30px 0
+			height: auto
+.border-line
+	position: absolute
+	width: 415px
+	height: 52px
+	background: url("../img/border.svg") no-repeat
+	left: 50%
+	margin-left: -207px
+	top: 0
+	z-index: 1
+	+r(767)
+		display: none
+
+.replies
+	margin: 0 auto
+	+clr
+	+r(767)
+		div[class*="replies__item-wrap"].two, div[class*="replies__item-wrap"].three, div[class*="replies__item-wrap"].four
+			display: none
+	&__wrap
+		margin: 67px auto 0 auto
+		padding: 25px 0 25px 0
+		border: 3px dashed $white
+		+r(1000)
+			width: 650px
+			height: 230px
+		+r(767)
+			width: 320px
+			height: auto
+			border: none
+			padding: 0
+			margin: 25px auto 0 auto
+	&__item
+		width: 360px
+		background: $white
+		position: relative
+		padding-top: 43px
+		padding-bottom: 17px
+		+r(1000)
+			width: 280px
+		+r(767)
+			padding-top: 23px
+			margin-bottom: 22px
+			width: 260px
+		&_left
+			@extend .replies__item
+			padding-left: 78px
+			padding-right: 42px
+
+			+r(767)
+				padding-left: 58px
+		&_right
+			@extend .replies__item
+			padding-right: 70px
+			padding-left: 33px
+			+r(1000)
+				padding-left: 23px
+				padding-right: 50px
+			+r(767)
+				padding-right: 45px
+		&-wrap
+			width: 387px
+			+r(387)
+				width: 300px
+			&_left
+				padding-left: 37px
+				margin-right: 50px
+				+r(1000)
+					margin-right: 20px
+				+r(767)
+					position: relative
+					left: -10px
+			&_right
+				padding-right: 37px
+				margin-right: 30px
+				+r(1000)
+					margin-right: -20px
+				+r(767)
+					position: relative
+					left: 28px
+
+	&__img
+		border-radius: 50%
+		display: block
+		position: absolute
+		border: 5px solid $white
+		box-shadow: 0 0 0 8px $sky
+		width: 70px
+		height: 70px
+		top: 50%
+		margin-top: -33px
+		+r(767)
+			width: 51px
+			height: 51px
+			margin-top: -25px
+		&_left
+			@extend .replies__img
+			left: -18px
+		&_right
+			@extend .replies__img
+			right: -18px
+	&__quote
+		+roboto
+		font-size: 13px
+		font-weight: 400
+		line-height: 15px
+		+r(1000)
+			font-size: 15px
+		+r(767)
+			font-size: 11px
+			text-align: center
+			line-height: 14px
+	&__author
+		color: $darkGreenBlue
+		text-align: right
+		margin-top: 17px
+		+r(1000)
+			font-size: 14px
+			font-style: italic
+			text-align: left
+		+r(767)
+			font-size: 11px
+			text-align: center
+			margin-top: 5px
+
+.more-testimonals
+	@extend .more-works
+
+//start pricing section
+.pricing
+	background: linear-gradient(to bottom, $sky 0%, #C3E4F7 20%, #DBE4E8 100%)
+	position: relative
+	&:before
+		display: block
+		content: ''
+		background: url("../img/dashed-line.svg") center repeat-x
+		position: absolute
+		height: 300px
+		width: 100%
+		top: 25px
+		+r(1000)
+			top: 20px
+			height: 260px
+		+r(767)
+			display: none
+	+r(767)
+		background: #C1E6F9
+	&__inner
+		width: 1000px
+		margin: 0 auto
+		+r(1000)
+			width: 100%
+.price
+	height: 300px
+	+flex(space-between)
+	padding: 50px 46px 0 53px
+	+r(1000)
+		padding: 45px 26px 0 23px
+		width: 767px
+		margin: 0 auto
+	+r(767)
+		background: none
+		display: block
+		width: 320px
+		margin: 0 auto
+		padding: 15px 0 42px 0
+		height: auto
+
+	&__item
+		width: 258px
+		height: 168px
+		background: url("../img/price-bg.svg") no-repeat
+		position: relative
+		text-align: center
+		@media screen and (min-width: 767px) and (max-width: 1000px)
+			width: 205px
+			height: 135px
+		+r(767)
+			margin: 0 auto 45px auto
+	&__title
+		+robotoCond
+		font-size: 16px
+		text-align: center
+		text-transform: uppercase
+		color: $white
+		margin-top: 20px
+		@media screen and (min-width: 767px) and (max-width: 1000px)
+			font-size: 22px
+			font-weight: bold
+			margin-top: 10px
+		+r(767)
+			padding-top: 22px
+		& span
+			@media screen and (min-width: 767px) and (max-width: 1000px)
+				display: none
+
+	&__ammount
+		display: block
+		+captain
+		font-size: 57px
+		text-align: center
+		color: $veryDarkBlue
+		font-weight: bold
+		margin-top: 18px
+		line-height: 70px
+		@media screen and (min-width: 767px) and (max-width: 1000px)
+			margin-top: 0
+			font-size: 46px
+			line-height: 65px
+		& span
+			color: #3796BF
+	&__term
+		+ptCapt
+		font-size: 20px
+		text-transform: uppercase
+		background: $darkDarkBlue
+		color: #1B75BB
+		padding: 3px 12px
+		position: absolute
+		bottom: -14px
+		width: 90px
+		left: 50%
+		margin-left: -45px
+		letter-spacing: -2px
+		@media screen and (min-width: 767px) and (max-width: 1000px)
+			font-size: 16px
+			padding: 3px 10px
+			bottom: -13px
+		& span
+			color: $lightBlue
+			+captain
+			letter-spacing: 0
+
+		&-name
+			text-align: center
+			text-transform: uppercase
+			+roboto
+			font-size: 14px
+			color: $darkGreenBlue
+			letter-spacing: 1px
+			font-weight: bold
+			@media screen and (min-width: 767px) and (max-width: 1000px)
+				font-size: 11px
+				font-weight: bold
+
+//start team section
+.team
+	background: url("../img/city-bg.png") 50% 60px no-repeat, linear-gradient(to bottom, #D7E4EB 0%, #EFE1D5 30%)
+	background-size: cover // 210
+	&__inner
+		padding-top: 100px
+		+r(1000)
+			padding-top: 10px
+		+r(767)
+			display: none
+
+.members
+	width: 320px
+	height: 433px
+	margin: 0 auto
+	background: $darkBlue
+	padding: 28px
+
+	&__row
+		+flex(space-between, center)
+		margin-bottom: 19px
+		&.has-bg
+			position: relative
+			background: url("../img/city-bg.png") 610px 300px
+			+r(1000)
+				background-position: 635px 300px
+			&:before
+				content: ''
+				display: block
+				height: 68px
+				width: 201px
+				left: 50%
+				margin-left: -90px
+				bottom: 0
+				background: url("../img/work-process.svg") no-repeat center center
+				position: absolute
+				z-index: 9
+			.members__item
+				position: relative
+				opacity: .1
+				+r(1000)
+					background: yellow
+					opacity: .1
+
+	&__item
+		width: 60px
+		height: 81px
+		background: #3A5A70
+		padding-top: 5px
+		position: relative
+	&__img
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		display: block
+		margin: 0 auto 4px auto
+	&__name
+		+roboto
+		font-size: 10px
+		line-height : 10px
+		color: $white
+		padding-left: 3px
+	&__position
+		@extend .members__name
+		color: $lightBlue
+
+.soc
+	&-container
+		width: 60px
+		height: 81px
+		+flex(space-between)
+		flex-wrap: wrap
+		padding: 20px 0 0 5px
+		background: $darkBlue
+		position: absolute
+		top: 0
+		left: 0
+		+r(1000)
+			display: none
+	&-ico
+		display: block
+		width: 22px
+		height: 22px
+		&_hidden
+			@extend .soc-ico
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-top: -11px
+			margin-left: -11px
+			display: none
+			+r(1000)
+				display: block
+.fb
+	@extend .soc-ico
+	background: url("../img/fb.svg")
+	&.soc-ico_hidden
+		background: url("../img/fb-white.svg")
+
+.tw
+	@extend .soc-ico
+	background: url("../img/tw.svg")
+	&.soc-ico_hidden
+		background: url("../img/tw-white.svg")
+.pinter
+	@extend .soc-ico
+	background: url("../img/pinter.svg")
+	&.soc-ico_hidden
+		background: url("../img/pinter-white.svg")
+.inst
+	@extend .soc-ico
+	background: url("../img/inst.svg")
+	&.soc-ico_hidden
+		background: url("../img/inst-white.svg")
+
+.border
+	height: 100%
+	background: $darkBlue
+	position: absolute
+	width: 8px
+	top: 100px
+	left: -7px
+	z-index: 2
+
+//start footer
+.footer
+	display: none
+	background: $darkDarkBlue
+	padding-bottom: 20px
+	+r(767)
+		display: block
+	&__btn-wrap
+		background: white
+		width: 230px
+		height: 65px
+		+flex(center, center)
+		margin: 0 auto
+		position: relative
+		top: -33px
+		border-bottom: 3px solid #8CA5AF
+		&:before
+			display: block
+			content: ''
+			border: 1px solid #D4DEE7
+			width: 217px
+			height: 52px
+			position: absolute
+			top: 6px
+			left: 6px
+.write-us-mob
+	width: 193px
+	height: 37px
+	background: $lightOrange
+	color: white
+	font-weight: bold
+	text-transform: uppercase
+	text-align: center
+	display: block
+	font-size: 17px
+	+ptCapt
+	position: relative
+	z-index: 5
+.socials
+	+flex(space-between, center)
+	width: 160px
+	margin: 5px auto
+	&__item
+		width: 22px
+		height: 22px
+	&__link
+		&.fb
+			background: url("../img/fb-darkblue.svg")
+		&.pinter
+			background: url("../img/pinter-darkblue.svg")
+		&.inst
+			background: url("../img/inst-darkblue.svg")
+		&.tw
+			background: url("../img/tw-darkblue.svg")
+
+
+
+
+
+
